@@ -97,13 +97,26 @@ begin
     timer2.Enabled := false;
     
     //Записываем наши достижения в файлик
-    var rec: PABCSystem.Text;
-    Assign(rec, 'Records.txt');
-    Append(rec);
-    var localDate := DateTime.Now;
-    if not Mix then Writeln(rec, localDate + ' ' + time + 'сек.' + ' поле ' + Wid + 'x' + Hei) else
-      Writeln(rec, localDate + ' ' + time + 'сек.' + ' поле ' + Wid + 'x' + Hei + ' режим перемешивания включен');
-    PABCSystem.Close(rec);
+    try
+      var rec: PABCSystem.Text;
+      Assign(rec, 'Records.txt');
+      Append(rec);
+      var localDate := DateTime.Now;
+      if not Mix then Writeln(rec, localDate + ' ' + time + 'сек.' + ' поле ' + Wid + 'x' + Hei) else
+        Writeln(rec, localDate + ' ' + time + 'сек.' + ' поле ' + Wid + 'x' + Hei + ' режим перемешивания включен');
+      PABCSystem.Close(rec);
+    except
+      var rec: PABCSystem.Text;
+      Assign(rec, 'Records.txt');
+      ReWrite(rec);
+      PABCSystem.Close(rec);
+      Assign(rec, 'Records.txt');
+      Append(rec);
+      var localDate := DateTime.Now;
+      if not Mix then Writeln(rec, localDate + ' ' + time + 'сек.' + ' поле ' + Wid + 'x' + Hei) else
+        Writeln(rec, localDate + ' ' + time + 'сек.' + ' поле ' + Wid + 'x' + Hei + ' режим перемешивания включен');
+      PABCSystem.Close(rec);
+    end;
     
     //Ну и вернем кнопку, чтобы можно было еще поиграть
     button1.Text := 'Начать';    
