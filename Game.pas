@@ -7,6 +7,7 @@ uses System, System.Drawing, System.Windows.Forms,kk;
 var
   time, c: integer;
   maxbutton := Wid * Hei;
+  Colors:List<Color>;
 
 type
   Form12 = class(Form)
@@ -18,7 +19,7 @@ type
     procedure timer2_Tick(sender: Object; e: EventArgs);
     procedure timer3_Tick(sender: Object; e: EventArgs);
   {$region FormDesigner}
-  private 
+  private
     {$resource Game.Form12.resources}
     timer1: Timer;
     button1: Button;
@@ -102,8 +103,10 @@ begin
         if a.Count - 1 <= 0 then rnd := 0
         else rnd := PABCSystem.Random(0, a.Count - 1);
         con.Text := a[rnd] + '';
-        con.ForeColor := Color.FromArgb(255, PABCSystem.Random(255), PABCSystem.Random(255), PABCSystem.Random(255));
-        con.BackColor := Color.FromArgb(255, 225, 225, 225);
+        //con.ForeColor := ColorRnd();
+        con.BackColor := ColorRnd();
+        con.ForeColor := Color.White;
+        //con.BackColor := Color.FromArgb(255, 225, 225, 225);
         a.RemoveAt(rnd);
       end;
 end;
@@ -144,7 +147,8 @@ begin
     begin
       b.Enabled := false;
       inc(c);
-      b.BackColor := Color.FromArgb(255, 250, 210, 1);
+      //b.BackColor := Color.FromArgb(255, 250, 210, 1);
+      b.BackColor := Color.FromArgb(255, 225, 225, 225);
       if Mix then NumGen(self, false);
     end;
     if kk.Help then timer2.Enabled := true;
