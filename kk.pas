@@ -7,6 +7,7 @@ var
   Help:=true;//Подсказки?
   Delay:=5;//Задержка подсказок
   Aut:=false;//Автопилот?
+  ButEnable:=true;
   
 function ColorRnd():Color;
 begin

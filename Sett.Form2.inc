@@ -14,6 +14,7 @@ procedure InitializeComponent;
         self.comboBox3 := new System.Windows.Forms.ComboBox();
         self.label3 := new System.Windows.Forms.Label();
         self.checkBox3 := new System.Windows.Forms.CheckBox();
+        self.checkBox5 := new System.Windows.Forms.CheckBox();
         self.SuspendLayout();
         // 
         // comboBox1
@@ -64,15 +65,16 @@ procedure InitializeComponent;
         // 
         // checkBox1
         // 
-        self.checkBox1.Location := new System.Drawing.Point(12, 113);
+        self.checkBox1.Location := new System.Drawing.Point(13, 113);
         self.checkBox1.Name := 'checkBox1';
-        self.checkBox1.Size := new System.Drawing.Size(211, 55);
+        self.checkBox1.Size := new System.Drawing.Size(241, 24);
         self.checkBox1.TabIndex := 6;
-        self.checkBox1.Text := 'Изменять местоположение кнопок';
+        self.checkBox1.Text := 'Изменять местоположение';
         self.checkBox1.UseVisualStyleBackColor := true;
         // 
         // button2
         // 
+        self.button2.Anchor := (System.Windows.Forms.AnchorStyles((System.Windows.Forms.AnchorStyles.Bottom or System.Windows.Forms.AnchorStyles.Left)));
         self.button2.Location := new System.Drawing.Point(222, 204);
         self.button2.Name := 'button2';
         self.button2.Size := new System.Drawing.Size(75, 33);
@@ -88,9 +90,10 @@ procedure InitializeComponent;
         // 
         // checkBox2
         // 
+        self.checkBox2.Anchor := (System.Windows.Forms.AnchorStyles((System.Windows.Forms.AnchorStyles.Bottom or System.Windows.Forms.AnchorStyles.Left)));
         self.checkBox2.Checked := true;
         self.checkBox2.CheckState := System.Windows.Forms.CheckState.Checked;
-        self.checkBox2.Location := new System.Drawing.Point(12, 174);
+        self.checkBox2.Location := new System.Drawing.Point(13, 175);
         self.checkBox2.Name := 'checkBox2';
         self.checkBox2.Size := new System.Drawing.Size(195, 24);
         self.checkBox2.TabIndex := 8;
@@ -99,6 +102,7 @@ procedure InitializeComponent;
         // 
         // comboBox3
         // 
+        self.comboBox3.Anchor := (System.Windows.Forms.AnchorStyles((System.Windows.Forms.AnchorStyles.Bottom or System.Windows.Forms.AnchorStyles.Left)));
         self.comboBox3.FormattingEnabled := true;
         self.comboBox3.Items.AddRange(new System.Object[10]('1', '2', '3', '4', '5', '6', '7', '8', '9', '10'));
         self.comboBox3.Location := new System.Drawing.Point(114, 204);
@@ -109,6 +113,7 @@ procedure InitializeComponent;
         // 
         // label3
         // 
+        self.label3.Anchor := (System.Windows.Forms.AnchorStyles((System.Windows.Forms.AnchorStyles.Bottom or System.Windows.Forms.AnchorStyles.Left)));
         self.label3.Location := new System.Drawing.Point(12, 207);
         self.label3.Name := 'label3';
         self.label3.Size := new System.Drawing.Size(96, 28);
@@ -117,16 +122,29 @@ procedure InitializeComponent;
         // 
         // checkBox3
         // 
-        self.checkBox3.Location := new System.Drawing.Point(222, 128);
+        self.checkBox3.Anchor := (System.Windows.Forms.AnchorStyles((System.Windows.Forms.AnchorStyles.Bottom or System.Windows.Forms.AnchorStyles.Left)));
+        self.checkBox3.Location := new System.Drawing.Point(222, 175);
         self.checkBox3.Name := 'checkBox3';
         self.checkBox3.Size := new System.Drawing.Size(75, 24);
         self.checkBox3.TabIndex := 11;
         self.checkBox3.Text := 'Авто';
         self.checkBox3.UseVisualStyleBackColor := true;
         // 
+        // checkBox5
+        // 
+        self.checkBox5.Checked := true;
+        self.checkBox5.CheckState := System.Windows.Forms.CheckState.Checked;
+        self.checkBox5.Location := new System.Drawing.Point(13, 143);
+        self.checkBox5.Name := 'checkBox5';
+        self.checkBox5.Size := new System.Drawing.Size(195, 24);
+        self.checkBox5.TabIndex := 13;
+        self.checkBox5.Text := 'Отображать нажатые';
+        self.checkBox5.UseVisualStyleBackColor := true;
+        // 
         // Form2
         // 
         self.ClientSize := new System.Drawing.Size(309, 245);
+        self.Controls.Add(self.checkBox5);
         self.Controls.Add(self.checkBox3);
         self.Controls.Add(self.label3);
         self.Controls.Add(self.comboBox3);
@@ -140,7 +158,6 @@ procedure InitializeComponent;
         self.Controls.Add(self.comboBox1);
         self.Font := new System.Drawing.Font('Moire', 14.25, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (System.Byte(0)));
         self.Icon := (System.Drawing.Icon(resources.GetObject('$this.Icon')));
-        self.MaximumSize := new System.Drawing.Size(325, 284);
         self.MinimumSize := new System.Drawing.Size(325, 284);
         self.Name := 'Form2';
         self.StartPosition := System.Windows.Forms.FormStartPosition.CenterScreen;

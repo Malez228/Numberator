@@ -29,6 +29,7 @@ type
     comboBox3: ComboBox;
     label3: &Label;
     checkBox3: CheckBox;
+    checkBox5: CheckBox;
     button2: Button;
     {$include Sett.Form2.inc}
   {$endregion FormDesigner}
@@ -53,6 +54,7 @@ begin
   kk.Help := CheckBox2.Checked;
   Delay := strtoint(ComboBox3.Text);
   Aut := CheckBox3.Checked;
+  ButEnable:=CheckBox5.Checked;
   self.Hide();
   
   var f2:= new Form12;
@@ -67,6 +69,7 @@ begin
   begin
     Label3.Enabled:=CheckBox2.Checked;
     ComboBox3.Enabled:=CheckBox2.Checked;
+    ButEnable:=CheckBox5.Checked;
     Aut := CheckBox3.Checked;
     //Проверка на подлинность
     try
@@ -90,6 +93,7 @@ begin
   Mix := CheckBox1.Checked;
   Delay:=strtoint(ComboBox3.Text);
   kk.Help:= CheckBox2.Checked;
+  ButEnable:=CheckBox5.Checked;
   cl := true;
 end;
 

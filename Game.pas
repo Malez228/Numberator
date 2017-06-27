@@ -145,10 +145,12 @@ begin
     b := (sender) as Button;
     if c = strtoint(b.Text) then
     begin
-      b.Enabled := false;
+      if ButEnable then
+      begin
+        b.Enabled := false;
+        b.BackColor := Color.FromArgb(255, 225, 225, 225);
+      end;
       inc(c);
-      //b.BackColor := Color.FromArgb(255, 250, 210, 1);
-      b.BackColor := Color.FromArgb(255, 225, 225, 225);
       if Mix then NumGen(self, false);
     end;
     if kk.Help then timer2.Enabled := true;
@@ -185,7 +187,9 @@ begin
   foreach var con: Control in self.Controls do
     if con.Text = inttostr(c) then
     begin
-      con.BackColor := Color.FromArgb(255, 113, 206, 235);
+      con.BackColor := Color.FromArgb(255, 255, 255, 255);
+      con.ForeColor := Color.Black;
+      con.TabStop:=true;
       timer2.Enabled := false;
     end;
 end;
